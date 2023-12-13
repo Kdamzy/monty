@@ -21,6 +21,7 @@ void kade_ptop(kennyade **head, unsigned int num)
 
 /**
  * kade_recesive - Does nothing.
+ * 
  * @head: Pointer to the head of the stack.
  * @num: Line number of the stack
  */
