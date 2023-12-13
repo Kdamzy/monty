@@ -1,76 +1,65 @@
 #include "monty.h"
 
 /**
- * switch_stack - Sets the stack mode.
- *
- * @head: Pointer to the head of the stack (unused).
- * @counter: Line number of the current operation (unused).
- * This function sets the stack mode, indicating that
- * the Monty interpreter should operate in stack mode.
- * The parameters `head` and `counter` are marked as unused
- * since they are not utilized in the function
- */
-void switch_stack(MontyNode_t **head, unsigned int counter)
-{
-	(void)head;
-	(void)counter;
-	bus.lifi = 0;
-}
-
-
-/**
- * enqueue - Sets the queue mode.
- *
- * @head: Pointer to the head of the stack (unused).
- * @counter: Line number of the current operation (unused).
- * This function sets the queue mode, indicating that
- * the Monty interpreter should operate in queue mode.
- * The parameters `head` and `counter` are marked
- * as unused since they are not utilized in the function.
- */
-
-void enqueue(MontyNode_t **head, unsigned int counter)
-{
-	(void)head;
-	(void)counter;
-	bus.lifi = 1;
-}
-
-/**
- * addqueue - Adds a node to the tail of the stack.
+ * kade_arrange - Sets the stack mode.
  *
  * @head: Pointer to the head of the stack.
- * @n: New value to be added to the stack.
- * This function adds a new node with the given value
- * to the tail of the stack. If the stack is empty,
- * the new node becomes the head of the stack.
+ * @num: Line number of the stack
+ */
+void kade_arrange(kennyade **head, unsigned int num)
+{
+	(void)head;
+	(void)num;
+	ken.ade = 0;
+}
+
+
+/**
+ * kade_set - Sets the queue mode.
+ *
+ * @head: Pointer to the head of the stack
+ * @num: Line number of the stack
  */
 
-void addqueue(MontyNode_t **head, int n)
+void kade_set(kennyade **head, unsigned int num)
 {
-	MontyNode_t *new_node, *xin;
+	(void)head;
+	(void)num;
+	ken.ade = 1;
+}
 
-	xin = *head;
-	new_node = malloc(sizeof(MontyNode_t));
-	if (new_node == NULL)
+/**
+ * kade_tnode - Adds a node to the tail of the stack.
+ *
+ * @head: Pointer to the head of the stack.
+ * @y: New value to be added to the stack.
+ */
+
+void kade_tnode(kennyade **head, int y)
+{
+	kennyade *anew_node, *sot;
+
+	sot = *head;
+	anew_node = malloc(sizeof(kennyade));
+	if (anew_node == NULL)
 		printf("Error\n");
-	new_node->n = n;
-	new_node->next = NULL;
-	if (xin)
+	anew_node->n = y;
+	anew_node->next = NULL;
+	if (sot)
 	{
-		while (xin->next)
+		while (sot->next)
 		{
-			xin = xin->next;
+			sot = sot->next;
 		}
 	}
-	if (xin == NULL)
+	if (sot == NULL)
 	{
-		*head = new_node;
-		new_node->prev = NULL;
+		*head = anew_node;
+		anew_node->prev = NULL;
 	}
 	else
 	{
-		xin->next = new_node;
-		new_node->prev = xin;
+		sot->next = anew_node;
+		anew_node->prev = sot;
 	}
 }

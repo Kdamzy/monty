@@ -1,75 +1,67 @@
 #include "monty.h"
 
 /**
- * exchange - Swaps the top two elements of the stack.
+ * kade_flip - Swaps the top two elements of the stack.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function swaps the top two elements of the stack.
- * It modifies the stack accordingly, and no values are returned.
- * Handles stack length checks.
+ * @num: current working line number.
  */
-void exchange(MontyNode_t **head, unsigned int counter)
+void kade_flip(kennyade **head, unsigned int num)
 {
-	int  xin, lentt;
-	MontyNode_t *hc;
+	int  sol, lent;
+	kennyade *tose;
 
-	lentt = 0;
-	hc = *head;
-	while (hc)
+	lent = 0;
+	tose = *head;
+	while (tose)
 	{
-		hc = hc->next;
-		lentt++;
+		tose = tose->next;
+		lent++;
 	}
-	if (lentt < 2)
+	if (lent < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: this can't swap, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	xin = hc->n;
-	hc->n = hc->next->n;
-	hc->next->n = xin;
+	tose = *head;
+	sol = tose->n;
+	tose->n = tose->next->n;
+	tose->next->n = sol;
 }
 
 
 /**
- * sum - Adds the top two elements of the stack.
+ * kade_sum - Adds the top two elements of the stack together
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- *
- * Description:
- * This function adds the top two elements of the stack.
- * It modifies the stack accordingly, and the result
- * is stored at the second top element. Handles stack length checks.
+ * @num: the line number.
  */
-void sum(MontyNode_t **head, unsigned int counter)
+void kade_sum(kennyade **head, unsigned int num)
 {
-	int xin, lentt;
-	MontyNode_t *hc;
+	int sole, legt;
+	kennyade *heit;
 
-	lentt = 0;
-	hc = *head;
-	while (hc)
+	legt = 0;
+	heit = *head;
+	while (heit)
 	{
-		hc = hc->next;
-		lentt++;
+		heit = heit->next;
+		legt++;
 	}
-	if (lentt < 2)
+	if (legt < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: This can't add, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	xin = hc->n + hc->next->n;
-	hc->next->n = xin;
-	*head = hc->next;
-	free(hc);
+	heit = *head;
+	sole = heit->n + heit->next->n;
+	heit->next->n = sole;
+	*head = heit->next;
+	free(heit);
 }

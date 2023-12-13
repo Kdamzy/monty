@@ -1,75 +1,75 @@
 #include "monty.h"
 
 /**
- * funcnCaller - Executes the opcode.
+ * kade_call - Executes the opcode.
  *
- * @content: Line content containing the opcode.
- * @stack: Head of the stack.
- * @counter: Line counter.
+ * @text: Line content containing the opcode.
+ * @stack: pointer to the head of the stack.
+ * @num: Line counter of the stack
  * @file: Pointer to the Monty file.
  *
  * Return: 0 if the opcode is a comment or
  * if the line is empty, 1 otherwise.
  */
-int funcnCaller(char *content, MontyNode_t **stack,
-unsigned int counter, FILE *file)
+int kade_call(char *text, kennyade **stack,
+unsigned int num, FILE *file)
 {
-	comand_t opst[] = {
-				{"push",  opcodePush}, {"pall",   prntAll}, {"pint",   topPrinter},
-				{"pop",  remove_top},
-				{"swap", exchange},
-				{"add", sum},
-				{"nop",   redundant},
-				{"sub", subtrakt},
-				{"div",    divider},
-				{"mul",  multply},
-				{"mod",  computeMod},
-				{"pchar", prnt_char},
-				{"pstr", prnt_strng},
-				{"rotl", left_rotatn},
-				{"rotr", right_rotatn},
-				{"queue", enqueue},
-				{"stack", switch_stack},
+	kade_mand opst[] = {
+				{"push", kade_insert}, {"pall", kade_print}, {"pint", kade_ptop},
+				{"pop", kade_pop},
+				{"swap", kade_flip},
+				{"add", kade_sum},
+				{"nop", kade_recessive},
+				{"sub", kade_sub},
+				{"div", kade_div},
+				{"mul", kade_mul},
+				{"mod", kade_modul},
+				{"pchar", kade_pchar},
+				{"pstr", kade_pstr},
+				{"rotl", kade_lrot},
+				{"rotr", kade_rrot},
+				{"queue", kade_set},
+				{"stack", kade_arrange},
 				{NULL, NULL}
 				};
-	char *vc;
+	char *day;
 	unsigned int aii = 0;
 
-	vc = strtok(content, " \n\t");
-	if (vc && vc[0] == '#')
+	day = strtok(text, " \n\t");
+	if (day && day[0] == '#')
 		return (0);
-	bus.arg = strtok(NULL, " \n\t");
-	while (opst[aii].opcode && vc)
+	ken.arg = strtok(NULL, " \n\t");
+	while (opst[aii].opcode && day)
 	{
-		if (strcmp(vc, opst[aii].opcode) == 0)
-		{	opst[aii].f(stack, counter);
+		if (strcmp(day, opst[aii].opcode) == 0)
+		{	opst[aii].f(stack, num);
 			return (0);
 		}
 		aii++;
 	}
-	if (vc && opst[aii].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, vc);
+	if (day && opst[aii].opcode == NULL)
+	{ fprintf(stderr, "L%d: instruction unknown %s\n", num, day);
 		fclose(file);
-		free(content);
-		 clearStack(*stack);
+		free(text);
+		 kade_free(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
 
 /**
- *  clearStack - Frees a doubly linked list.
+ *  kade_free - Frees a doubly linked list.
  *
- * @head: Head of the stack.
+ * @head: pointer to the head of the stack.
  */
-void  clearStack(MontyNode_t *head)
+void kade_free(kennyade *head)
 {
-	MontyNode_t *xin;
+	kennyade *tip;
 
-	xin = head;
+	tip = head;
 	while (head)
 	{
-		xin = head->next;
+		tip = head->next;
 		free(head);
-		head = xin;
+		head = tip;
 	}
 }

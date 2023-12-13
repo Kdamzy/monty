@@ -1,56 +1,49 @@
 #include "monty.h"
 
 /**
- * insertNode - Adds a new node to the head of the stack.
+ * kade_nodead - Adds a new node to the head of the stack.
  *
  * @head: A pointer to the head of the stack.
- * @n: The value to be added to the new node.
- * This function creates a new node with the given value and
- * adds it to the head of the stack. If the stack is not empty,
- * it adjusts the pointers accordingly.
+ * @n: The value of the new node to be added
  */
-void insertNode(MontyNode_t **head, int n)
+void kade_nodead(kennyade **head, int n)
 {
 
-	MontyNode_t *fresh_node, *xin;
+	kennyade *anew_node, *sol;
 
-	xin = *head;
-	fresh_node = malloc(sizeof(MontyNode_t));
-	if (!fresh_node)
+	sol = *head;
+	anew_node = malloc(sizeof(kennyade));
+	if (!anew_node)
 	{ printf("Error\n");
 		exit(0); }
-	if (xin)
-		xin->prev = fresh_node;
-	fresh_node->n = n;
-	fresh_node->next = *head;
-	fresh_node->prev = NULL;
-	*head = fresh_node;
+	if (sol)
+		sol->prev = anew_node;
+	anew_node->n = n;
+	anew_node->next = *head;
+	anew_node->prev = NULL;
+	*head = anew_node;
 }
 
 
 /**
- *   prntAll - Prints the values of the stack.
+ * kade_print - Prints the values of the stack.
  *
  * @head: A pointer to the head of the stack.
- * @counter: Unused parameter.
- * This function prints all the values in the stack,
- * starting from the head. It ignores the 'counter'
- * parameter, which is there to match the function
- * signature required for opcode functions
+ * @num: Unused parameter.
  */
-void   prntAll(MontyNode_t **head, unsigned int counter)
+void kade_print(kennyade **head, unsigned int num)
 {
-	MontyNode_t *hc;
-	(void)counter;
+	kennyade *heit;
+	(void)num;
 
-	hc = *head;
-	if (!hc)
+	heit = *head;
+	if (!heit)
 	{
 		return;
 	}
-	while (hc)
+	while (heit)
 	{
-		printf("%d\n", hc->n);
-		hc = hc->next;
+		printf("%d\n", heit->n);
+		heit = heit->next;
 	}
 }

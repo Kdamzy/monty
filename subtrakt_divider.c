@@ -1,82 +1,74 @@
 #include "monty.h"
 
 /**
- * subtrakt - Subtracts the top element of the stack from
- * the second top element.
+ * kade_sub - Subtracts the first two element of the stack
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function subtracts the top element of the stack
- * from the second top element. It modifies the stack accordingly,
- * and the result is stored at the second top element.
+ * @num: Line number of the stack
  */
 
-void subtrakt(MontyNode_t **head, unsigned int counter)
+void kade_sub(kennyade **head, unsigned int num)
 {
-	int zux, list;
-	MontyNode_t *xin;
+	int wet, list;
+	kennyade *tet;
 
-	xin = *head;
-	for (list = 0; xin != NULL; list++)
+	tet = *head;
+	for (list = 0; tet != NULL; list++)
 	{
-		xin = xin->next;
+		tet = tet->next;
 	}
 	if (list < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	xin = *head;
-	zux = xin->next->n - xin->n;
-	xin->next->n = zux;
-	*head = xin->next;
-	free(xin);
+	tet = *head;
+	wet = tet->next->n - tet->n;
+	tet->next->n = wet;
+	*head = tet->next;
+	free(tet);
 }
 
 
 /**
- *    divider - Divides the second top element of the stack by the top element.
+ * kade_div - Divides the first element by the second.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function divides the second top element of the stack
- * by the top element. It modifies the stack accordingly,
- * and the result is stored at the second top element.
- * Handles division by zero and stack length checks
+ * @num: Line number of the stack.
  */
-void    divider(MontyNode_t **head, unsigned int counter)
+void kade_div(kennyade **head, unsigned int num)
 {
-	MontyNode_t *hc;
-	int lentt = 0, xin;
+	kennyade *heit;
+	int legt = 0, solo;
 
-	hc = *head;
-	while (hc)
+	heit = *head;
+	while (heit)
 	{
-		hc = hc->next;
-		lentt++;
+		heit = heit->next;
+		legt++;
 	}
-	if (lentt < 2)
+	if (legt < 2)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: can't div, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	if (hc->n == 0)
+	heit = *head;
+	if (heit->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: division by zero\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		 kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	xin = hc->next->n / hc->n;
-	hc->next->n = xin;
-	*head = hc->next;
-	free(hc);
+	solo = heit->next->n / heit->n;
+	heit->next->n = solo;
+	*head = heit->next;
+	free(heit);
 }

@@ -1,84 +1,76 @@
 #include "monty.h"
 
 /**
- *  multply - Multiplies the top two elements of the stack.
+ *  kade_mul - Multiplies the first two elements of the stack.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function multiplies the second top element
- * of the stack with the top element. If the stack
- * has less than two elements, it prints an error message and exits.
+ * @num: Line number of the stack
  */
 
-void  multply(MontyNode_t **head, unsigned int counter)
+void kade_mul(kennyade **head, unsigned int num)
 {
-	int xin, size = 0;
-	MontyNode_t *hc;
+	int den, size = 0;
+	kennyade *heit;
 
-	hc = *head;
-	while (hc)
+	heit = *head;
+	while (heit)
 	{
-		hc = hc->next;
+		heit = heit->next;
 		size++;
 	}
 	if (size < 2)
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		 kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	xin = hc->next->n * hc->n;
-	hc->next->n = xin;
-	*head = hc->next;
-	free(hc);
+	heit = *head;
+	den = heit->next->n * heit->n;
+	heit->next->n = den;
+	*head = heit->next;
+	free(heit);
 }
 
 
 /**
- *  computeMod - Computes the rest of the division of the second
- * top element of the stack by the top element of the stack.
+ *  kade_modul - Computes the remainder of the second element
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function calculates the remainder when dividing the
- * second top element by the top element.
- * If the stack has less than two elements or division
- * by zero occurs, it prints an error message and exits.
+ * @counter: Line number of the stack.
  */
-void  computeMod(MontyNode_t **head, unsigned int counter)
+void kade_modul(kennyade **head, unsigned int num)
 {
-	int size, xin;
-	MontyNode_t *hc;
+	int size, sol;
+	kennyade *mic;
 
 	size = 0;
-	hc = *head;
-	while (hc)
+	mic = *head;
+	while (mic)
 	{
-		hc = hc->next;
+		mic = mic->next;
 		size++;
 	}
 	if (size < 2)
 	{
-		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		 kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	if (hc->n == 0)
+	mic = *head;
+	if (mic->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: division by zero\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		 kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	xin = hc->next->n % hc->n;
-	hc->next->n = xin;
-	*head = hc->next;
-	free(hc);
+	sol = mic->next->n % mic->n;
+	mic->next->n = sol;
+	*head = mic->next;
+	free(mic);
 }

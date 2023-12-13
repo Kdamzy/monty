@@ -1,73 +1,67 @@
 #include "monty.h"
 
 /**
- *  remove_top - Removes the top element from the stack.
+ *  kade_pop - Removes the top element from the stack.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function removes the top element from the stack.
- * If the stack is empty, it prints an error message and exits.
+ * @num: Line number of the current working stack
  */
-void  remove_top(MontyNode_t **head, unsigned int counter)
+void kade_pop(kennyade **head, unsigned int num)
 {
-	MontyNode_t *hc;
+	kennyade *heit;
 
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	hc = *head;
-	*head = hc->next;
-	free(hc);
+	heit = *head;
+	*head = heit->next;
+	free(heit);
 }
 
 /**
- *  opcodePush - Adds a node with a given integer value to the stack.
+ *  kade_insert - insert node at a given integer.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the current operation.
- * This function checks if a valid integer is provided
- * as an argument (bus.arg), and if so, it adds a new node
- * with the integer value to the stack. If the argument is not a
- * valid integer, it prints an error message and exits.
+ * @counter: Line number of the stack
  */
 
-void  opcodePush(MontyNode_t **head, unsigned int counter)
+void kade_insert(kennyade **head, unsigned int num)
 {
-	int n, k, mark;
+	int y, t, nots;
 
-	k = 0, mark = 0;
-	if (bus.arg)
+	t = 0, nots = 0;
+	if (ken.arg)
 	{
-		if (bus.arg[0] == '-')
+		if (ken.arg[0] == '-')
 		{
-			k++;
+			t++;
 		}
-		for (; bus.arg[k] != '\0'; k++)
+		for (; ken.arg[t] != '\0'; t++)
 		{
-			if (bus.arg[k] > 57 || bus.arg[k] < 48)
-				mark = 1; }
-		if (mark == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
-			fclose(bus.file);
-			free(bus.content);
-			 clearStack(*head);
+			if (ken.arg[t] > 57 || ken.arg[t] < 48)
+				nots = 1; }
+		if (nots == 1)
+		{ fprintf(stderr, "L%d: usage: push integer\n", num);
+			fclose(ken.file);
+			free(ken.linetext);
+			kade_free(*head);
 			exit(EXIT_FAILURE); }}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		 clearStack(*head);
+	{ fprintf(stderr, "L%d: usage: push integer\n", num);
+		fclose(ken.file);
+		free(ken.linetext);
+		kade_free(*head);
 		exit(EXIT_FAILURE); }
-	n = atoi(bus.arg);
-	if (bus.lifi == 0)
-		insertNode(head, n);
+	y = atoi(ken.arg);
+	if (ken.ade == 0)
+		kade_nodead(head, y);
 	else
 	{
-		addqueue(head, n);
+		kade_tnode(head, y);
 	}
 }
