@@ -20,7 +20,7 @@ void kade_sum(kennyade **head, unsigned int num)
 	}
 	if (legt < 2)
 	{
-		fprintf(stderr, "L%d: This can't be add, stack is too short\n", num);
+		fprintf(stderr, "L%d: can't add, stack is too short\n", num);
 		fclose(ken.file);
 		free(ken.linetext);
 		kade_free(*head);

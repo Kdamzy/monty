@@ -15,7 +15,7 @@ void kade_pchar(kennyade **head, unsigned int num)
 	heit = *head;
 	if (heit == NULL)
 	{
-		fprintf(stderr, "L%d: can't print char, stack empty\n", num);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", num);
 		fclose(ken.file);
 		free(ken.linetext);
 		kade_free(*head);
@@ -23,7 +23,7 @@ void kade_pchar(kennyade **head, unsigned int num)
 	}
 	if (heit->n > 127 || heit->n < 0)
 	{
-		fprintf(stderr, "L%d: can't print char, value out of range\n", num);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", num);
 		fclose(ken.file);
 		free(ken.linetext);
 		kade_free(*head);

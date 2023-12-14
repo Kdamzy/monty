@@ -20,7 +20,7 @@ void kade_flip(kennyade **head, unsigned int num)
 	}
 	if (lent < 2)
 	{
-		fprintf(stderr, "L%d: this can't swap, stack too short\n", num);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", num);
 		fclose(ken.file);
 		free(ken.linetext);
 		kade_free(*head);

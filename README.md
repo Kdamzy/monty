@@ -48,3 +48,6 @@ All the files are compiled in the following form:
  gcc -Wall -Werror -Wextra -pedantic *.c -o monty.
 
 ```
+# AUTHOR
+kolajidedamilare(kdamzy)
+Adeyemi Adeyinka(adeyinka0804)
