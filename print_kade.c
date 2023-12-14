@@ -11,12 +11,10 @@ void kade_print(kennyade **head, unsigned int num)
 	kennyade *heit;
 	(void)num;
 
+	if (head == NULL)
+		exit(EXIT_FAILURE);
 	heit = *head;
-	if (!heit)
-	{
-		return;
-	}
-	while (heit)
+	while (heit != NULL)
 	{
 		printf("%d\n", heit->n);
 		heit = heit->next;
