@@ -4,7 +4,7 @@
  *  kade_insert - insert node at a given integer.
  *
  * @head: Pointer to the head of the stack.
- * @counter: Line number of the stack
+ * @num: Line number of the stack
  */
 
 void kade_insert(kennyade **head, unsigned int num)

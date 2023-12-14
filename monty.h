@@ -1,23 +1,18 @@
 #ifndef MONTY_H
 #define MONTY_H
-
 #define _POSIX_C_SOURCE 200809L
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <limits.h>
+#include <fcntl.h>
 #include <stdio.h>
 
-#include <stdlib.h>
-#include <sys/types.h>
-
-#include <unistd.h>
-#include <fcntl.h>
-
-#include <string.h>
-#include <ctype.h>
-
-#include <limits.h>
-
-
 /**
- * kennyades - A list representation of a stack 
+ * kennyades - A rep of a list of stack 
  * @n: integer
  * @prev: pointer to the first element
  * @next: pointer to the next element 
