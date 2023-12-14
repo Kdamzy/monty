@@ -23,11 +23,14 @@ void kade_insert(kennyade **head, unsigned int num)
 			if (ken.arg[t] > 57 || ken.arg[t] < 48)
 				nots = 1; }
 		if (nots == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", num);
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", num);
 			fclose(ken.file);
 			free(ken.linetext);
 			kade_free(*head);
-			exit(EXIT_FAILURE); }}
+			exit(EXIT_FAILURE);
+		}
+	}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", num);
 		fclose(ken.file);
