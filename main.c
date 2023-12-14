@@ -3,11 +3,11 @@
 kade_info ken = {NULL, NULL, NULL, 0};
 
 /**
- * main - Entry point for the Monty interpreter.
+ * main - Entry point for the Monty.
  *
- * @argc: Number of command-line arguments.
- * @argv: Array of command-line arguments.
- * 
+ * @argc: Number of command-line arg
+ * @argv: Array of command-line arg
+ *
  * Return: 0 on success, or EXIT_FAILURE on failure.
  */
 

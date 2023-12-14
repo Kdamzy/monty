@@ -13,7 +13,6 @@ void kade_arrange(kennyade **head, unsigned int num)
 	ken.ade = 0;
 }
 
-
 /**
  * kade_set - Sets the queue mode.
  *
