@@ -7,7 +7,7 @@
  */
 void kade_ptop(kennyade **head, unsigned int num)
 {
-	if (!*head)
+	if (head == NULL || *head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", num);
 		fclose(ken.file);
